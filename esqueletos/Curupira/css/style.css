@@ -1,0 +1,45 @@
+#toolbar{width: 100%;border: 1px solid;background-color: white;}
+.logoIfam{margin-right: 40px;}
+.logoCurupira{margin-left: 20px;}
+hr{border: 1.5px solid green;}
+#boxMaster{
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    behavior: url(css/border-radius.htc);
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Helvetica', 'Times New Roman';
+}
+#boxMaster td{border: none;}
+#boxMaster th{border: none; color: red; padding-top: 10px; padding-bottom: 10px;font-size: 20px;}
+.boxOption{
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    behavior: url(css/border-radius.htc);
+    border-radius: 15px;
+    background-color: #6bbe32;
+    width: 200px;
+    border: 1px solid;
+}
+.boxOption img{
+    width: 180px;
+    height: 180px;;   
+}
+.boxOption hr{
+    border-color: white;
+    border: 1.5px solid;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+.boxOption a{
+    font-size: 18px;
+    color: rgba(255, 0, 0, 0.9);
+    text-decoration: none;
+}
+.boxOption a:hover{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}

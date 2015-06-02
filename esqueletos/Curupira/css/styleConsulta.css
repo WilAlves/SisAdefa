@@ -1,0 +1,76 @@
+.boxSearching{
+    width: 360px;
+    height: 40px;
+    background-color: white;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-size: 16px;
+    color: #6bbe32;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    behavior: url(css/border-radius.htc);
+    border-radius: 15px;
+}
+.boxSearching td{border:none;}
+.boxSearching input[type="text"]{
+    color: red;
+    font-weight: bold;
+    border: 1px solid black;
+}
+.boxSearching button{
+    width: 80px;
+    height: 25px;
+    color: red;
+    background-color: rgba(235,235,235, 0.8);
+    border: 1px solid black;
+    font-weight: bold;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    behavior: url(css/border-radius.htc);
+    border-radius: 10px;
+}
+/*----------- box dos Resultados de pesquisa --------------*/
+.boxSearch{
+    width: 460px;
+    background-color: white;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-size: 16px;
+    color: #6bbe32;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    behavior: url(css/border-radius.htc);
+    border-radius: 10px;
+}
+.boxSearch label{
+    color: #68e313;
+    margin-left: 10px;
+}
+.boxSearch labelR{
+    color: #6bbe32;
+    margin-left: 10px;
+}
+.boxSearch labelF{
+    color: black;
+    text-decoration: underline;
+}
+.boxSearch fieldset{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    behavior: url(css/border-radius.htc);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    background-color: rgb(69,69,69);
+}
+.boxSearch fieldset legend{
+    color: #6bbe32;
+    background-color: rgb(69,69,69);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    behavior: url(css/border-radius.htc);
+    border: 1px solid;
+}

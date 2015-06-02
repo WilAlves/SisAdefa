@@ -1,0 +1,19 @@
+
+                      
+                      
+                      
+                      
+                      NomeParent1,ParentAluno1,IdadeParentAluno1,EscolaParentAluno1,AtivAtualParentAluno1,
+                      NomeParent2,ParentAluno2,IdadeParentAluno2,EscolaParentAluno2,AtivAtualParentAluno2,
+                      NomeParent3,ParentAluno3,IdadeParentAluno3,EscolaParentAluno3,AtivAtualParentAluno3
+
+
+
+
+                      
+                      
+                      
+                      
+                      '$NomeParent1','$ParentAluno1','$IdadeParentAluno1','$EscolaParentAluno1','$AtivAtualParentAluno1',
+                      '$NomeParent2','$ParentAluno2','$IdadeParentAluno2','$EscolaParentAluno2','$AtivAtualParentAluno2',
+                      '$NomeParent3','$ParentAluno3','$IdadeParentAluno3','$EscolaParentAluno3','$AtivAtualParentAluno3'
