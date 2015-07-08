@@ -1,0 +1,117 @@
+a:link, a:visited {
+	text-decoration: none
+	}
+a:hover {
+	text-decoration: none;
+	}
+a:active {
+
+	}
+
+.topo1{
+font:bold 34px "Times New Roman", Courier, monospace;
+font-style:normal;
+color:#ffffff;
+background:#00c5c5;
+border:0px solid #ea326f;
+text-shadow:0px 0px 0px #ffffff;
+line-height:42px;
+box-shadow:0px 0px 6px #454545;
+-moz-box-shadow:0px 0px 6px #454545;
+-webkit-box-shadow:0px 0px 6px #454545;
+border-radius:90px 15px 90px 15px;
+-moz-border-radius:90px 15px 90px 15px;
+-webkit-border-radius:90px 15px 90px 15px;
+}
+
+.login{
+font:normal 24px "Courier New", Courier, monospace;
+font-style:normal;
+color: black;
+background: #999999;
+border:2px hidden #ffffff;
+text-shadow:0px 0px 1px ;
+box-shadow:-1px 1px 6px #000000;
+-moz-box-shadow:-1px 1px 6px #000000;
+-webkit-box-shadow:-1px 1px 6px #000000;
+border-radius:0px 25px 0px 25px;
+-moz-border-radius:0px 25px 0px 25px;
+-webkit-border-radius:0px 25px 0px 25px;
+}
+
+.credito{
+font:normal 12px "Courier New", Courier, monospace;
+font-style:normal;
+color: black;
+background: #eeeeee;
+border:2px hidden #ffffff;
+box-shadow:-1px 1px 6px #eeeeee;
+border-radius:5px 5px 5px 5px;
+-moz-border-radius:5px 5px 5px 5px;
+-webkit-border-radius:5px 5px 5px 5px;
+}
+
+.button_e {
+font:bold 20px Arial, Helvetica, sans-serif;
+font-style:normal;
+color:#000000;
+background:#f2f2f2;
+border:0px solid #ffffff;
+text-shadow:-1px 1px 0px #fff;
+box-shadow:0px 0px 7px #000000;
+-moz-box-shadow:0px 0px 7px #000000;
+-webkit-box-shadow:0px 0px 7px #000000;
+border-radius:20px 20px 20px 20px;
+-moz-border-radius:20px 20px 20px 20px;
+-webkit-border-radius:20px 20px 20px 20px;
+width:100px;
+padding:2px -43px;
+cursor:pointer;
+margin:0 auto;
+}
+
+.button_e:active{
+cursor:pointer;
+position:relative;
+top:2px;
+}
+.button_e:hover{
+color:red;
+}
+
+.bt_1{
+font:normal 14px Verdana, Geneva, sans-serif;
+font-style:normal;
+color:#000000;
+background:#dedede;
+border:1px solid #bbb;
+text-shadow:0px 1px 0px #fff;
+box-shadow:0px 1px 10px #d1cfd1;
+-moz-box-shadow:0px 1px 10px #d1cfd1;
+-webkit-box-shadow:0px 1px 10px #d1cfd1;
+border-radius:10px 10px 10px 10px;
+-moz-border-radius:10px 10px 10px 10px;
+-webkit-border-radius:10px 10px 10px 10px;
+width:250px;
+padding:20px 20px;
+cursor:pointer;
+margin:0 auto;
+}
+.bt_1:active{
+cursor:pointer;
+position:relative;
+top:2px;
+}
+
+.div_x{
+background-color: #c4c3e3;
+border: 2px solid #999999;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px;
+/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+-moz-box-shadow: 0px 0px 10px #000000;
+-webkit-box-shadow: 0px 0px 10px #000000;
+box-shadow: 0px 0px 10px #000000;
+/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+}
