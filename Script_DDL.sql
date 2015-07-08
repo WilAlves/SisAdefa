@@ -1,0 +1,120 @@
+-- -----------------------------------------------------
+-- Table `mydb`.`condicoes_locomocao`
+-- -----------------------------------------------------
+CREATE TABLE condicoes_locomocao
+(
+	cond_id INTEGER NOT NULL,
+	cond_descricao VARCHAR(200) NULL,
+	PRIMARY KEY (`cond_id`)
+);
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`tipos_deficiencia`
+-- -----------------------------------------------------
+CREATE TABLE tipos_deficiencia
+(
+	tipos_id INTEGER NOT NULL,
+	tipos_descricao VARCHAR(200) NULL,
+	PRIMARY KEY (`tipos_id`)
+);
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`motivo_deficiencia`
+-- -----------------------------------------------------
+CREATE TABLE motivo_deficiencia
+(
+	mot_id INTEGER NOT NULL,
+	mot_descricao VARCHAR(200) NULL,
+	tipos_deficiencia_tipos_id INTEGER NOT NULL,
+	PRIMARY KEY (mot_id),
+	FOREIGN KEY (tipos_deficiencia_tipos_id) REFERENCES tipos_deficiencia (tipos_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`especificacao_deficiencia`
+-- -----------------------------------------------------
+CREATE TABLE especificacao_deficiencia
+(
+	espec_id INTEGER NOT NULL,
+	espec_descricao VARCHAR(200) NULL,
+	tipos_deficiencia_tipos_id INTEGER NOT NULL,
+	PRIMARY KEY (espec_id),
+	FOREIGN KEY (tipos_deficiencia_tipos_id) REFERENCES tipos_deficiencia (tipos_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`deficientes`
+-- -----------------------------------------------------
+CREATE TABLE deficientes
+(
+	defic_id INTEGER NOT NULL,
+	defic_nome VARCHAR(100) NULL,
+	defic_sexo VARCHAR(1) NULL,
+	defic_est_civil VARCHAR(45) NULL,
+	defic_data_cadastro DATE NULL,
+	defic_data_nascimento DATE NULL,
+	defic_telefone VARCHAR(45) NULL,
+	defic_celular VARCHAR(45) NULL,
+	defic_naturalidade VARCHAR(100) NULL,
+	defic_estado VARCHAR(100) NULL,
+	defic_cidade VARCHAR(100) NULL,
+	defic_rg VARCHAR(45) NULL,
+	defic_cpf VARCHAR(15) NULL,
+	defic_grau_instrucao VARCHAR(45) NULL,
+	defic_curso VARCHAR(100) NULL,
+	defic_profissao VARCHAR(100) NULL,
+	defic_endereco VARCHAR(4000) NULL,
+	defic_eleitor VARCHAR(100) NULL,
+	defic_cid VARCHAR(45) NULL,
+	defic_obs VARCHAR(4000) NULL,
+	tipos_deficiencia_tipos_id INTEGER NOT NULL,
+	condicoes_locomocao_cond_id INTEGER NOT NULL,
+	PRIMARY KEY (defic_id),
+	FOREIGN KEY (tipos_deficiencia_tipos_id) REFERENCES tipos_deficiencia (tipos_id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	FOREIGN KEY (condicoes_locomocao_cond_id) REFERENCES condicoes_locomocao (cond_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`funcionarios`
+-- -----------------------------------------------------
+CREATE TABLE funcionarios
+(
+	func_id INTEGER NOT NULL,
+	func_data_admissao DATE NULL,
+	func_ctps VARCHAR(45) NULL,
+	deficientes_defic_id INTEGER NOT NULL,
+	PRIMARY KEY (func_id),
+	FOREIGN KEY (deficientes_defic_id) REFERENCES deficientes (defic_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`historicos`
+-- -----------------------------------------------------
+CREATE TABLE historicos
+(
+	hist_id INTEGER NOT NULL,
+	hist_historico VARCHAR(4000) NULL,
+	deficientes_defic_id INTEGER NOT NULL,
+	PRIMARY KEY (hist_id),
+	FOREIGN KEY (deficientes_defic_id) REFERENCES deficientes (defic_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`usuarios`
+-- -----------------------------------------------------
+CREATE TABLE usuarios
+(
+	usu_id INTEGER NOT NULL,
+	usu_login VARCHAR(45) NULL,
+	usu_senha VARCHAR(45) NULL,
+	funcionarios_func_id INTEGER NOT NULL,
+	PRIMARY KEY (usu_id),
+	FOREIGN KEY (funcionarios_func_id) REFERENCES funcionarios (func_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
