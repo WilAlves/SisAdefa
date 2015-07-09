@@ -2,8 +2,13 @@
 
 include("functions.php");
 
+$acao = isset($_GET["acao"]) ? $_GET["acao"]:null;
+
 if ($acao == 'autenticar')
 {
+	$login = $_POST["login"];
+	$senha = $_POST["senha"];
+
 	$sql    = pg_query("select * from usuarios where usu_login = '$login' and usu_senha = '$senha'");
 	$vetor  = pg_fetch_array($sql);
 	$linhas = pg_num_rows($sql);

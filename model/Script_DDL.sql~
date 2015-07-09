@@ -1,49 +1,57 @@
-﻿-- -----------------------------------------------------
+-- -----------------------------------------------------
 -- Table `mydb`.`condicoes_locomocao`
 -- -----------------------------------------------------
 CREATE TABLE condicoes_locomocao
 (
-	cond_id SERIAL NOT NULL,
+	cond_id INTEGER NOT NULL,
 	cond_descricao VARCHAR(200) NULL,
 	PRIMARY KEY (cond_id)
 );
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`tipos_deficiencia`
 -- -----------------------------------------------------
 CREATE TABLE tipos_deficiencia
 (
-	tipo_id SERIAL NOT NULL,
+	tipo_id INTEGER NOT NULL,
 	tipo_descricao VARCHAR(200) NULL,
 	PRIMARY KEY (tipo_id)
 );
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`motivo_deficiencia`
 -- -----------------------------------------------------
 CREATE TABLE motivo_deficiencia
 (
-	mot_id SERIAL NOT NULL,
+	mot_id INTEGER NOT NULL,
 	mot_descricao VARCHAR(200) NULL,
 	tipos_deficiencia_tipo_id INTEGER NOT NULL,
 	PRIMARY KEY (mot_id),
 	FOREIGN KEY (tipos_deficiencia_tipo_id) REFERENCES tipos_deficiencia (tipo_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`especificacao_deficiencia`
 -- -----------------------------------------------------
 CREATE TABLE especificacao_deficiencia
 (
-	espec_id SERIAL NOT NULL,
+	espec_id INTEGER NOT NULL,
 	espec_descricao VARCHAR(200) NULL,
 	tipos_deficiencia_tipo_id INTEGER NOT NULL,
 	PRIMARY KEY (espec_id),
 	FOREIGN KEY (tipos_deficiencia_tipo_id) REFERENCES tipos_deficiencia (tipo_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`deficientes`
 -- -----------------------------------------------------
 CREATE TABLE deficientes
 (
-	defic_id SERIAL NOT NULL,
+	defic_id INTEGER NOT NULL,
 	defic_nome VARCHAR(100) NULL,
 	defic_sexo VARCHAR(1) NULL,
 	defic_est_civil VARCHAR(45) NULL,
@@ -69,35 +77,41 @@ CREATE TABLE deficientes
 	FOREIGN KEY (tipos_deficiencia_tipo_id) REFERENCES tipos_deficiencia (tipo_id) ON DELETE NO ACTION ON UPDATE NO ACTION,
 	FOREIGN KEY (condicoes_locomocao_cond_id) REFERENCES condicoes_locomocao (cond_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`funcionarios`
 -- -----------------------------------------------------
 CREATE TABLE funcionarios
 (
-	func_id SERIAL NOT NULL,
+	func_id INTEGER NOT NULL,
 	func_data_admissao DATE NULL,
 	func_ctps VARCHAR(45) NULL,
 	deficientes_defic_id INTEGER NOT NULL,
 	PRIMARY KEY (func_id),
 	FOREIGN KEY (deficientes_defic_id) REFERENCES deficientes (defic_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`historicos`
 -- -----------------------------------------------------
 CREATE TABLE historicos
 (
-	hist_id SERIAL NOT NULL,
+	hist_id INTEGER NOT NULL,
 	hist_historico VARCHAR(4000) NULL,
 	deficientes_defic_id INTEGER NOT NULL,
 	PRIMARY KEY (hist_id),
 	FOREIGN KEY (deficientes_defic_id) REFERENCES deficientes (defic_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`usuarios`
 -- -----------------------------------------------------
 CREATE TABLE usuarios
 (
-	usu_id SERIAL NOT NULL,
+	usu_id INTEGER NOT NULL,
 	usu_login VARCHAR(45) NULL,
 	usu_senha VARCHAR(45) NULL,
 	funcionarios_func_id INTEGER NOT NULL,
