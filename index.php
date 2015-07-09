@@ -6,8 +6,8 @@ $acao = isset($_GET["acao"]) ? $_GET["acao"]:null;
 
 if ($acao == 'autenticar')
 {
-	$login = $_POST["login"];
-	$senha = $_POST["senha"];
+	$login = $_POST["usu_login"];
+	$senha = $_POST["usu_senha"];
 
 	$sql    = pg_query("select * from usuarios where usu_login = '$login' and usu_senha = '$senha'");
 	$vetor  = pg_fetch_array($sql);
@@ -30,10 +30,13 @@ if ($acao == 'autenticar')
 	}
 }
 ?>
+
+<!DOCTYPE html>
 <html>
 	<head>
 		<title><?=$title;?></title>
-		 <link rel="stylesheet" href="./css/style.css" type="text/css" media="screen">
+		<link href='image/logo.png' rel='icon' type='image/x-icon'/>
+		<link rel="stylesheet" href="./css/style.css" type="text/css" media="screen">
 	</head>
 	<body onload="document.form1.login.focus();" align="center" bgcolor="#cccccc">
 		<form name="form1" method="post" action="?acao=autenticar">
@@ -50,9 +53,9 @@ if ($acao == 'autenticar')
 						<table width="150" align="center" border="0" >
 							<tr><td align="center"><b>SEJA BEM-VINDO<hr></b><br></td></tr>
 							<tr><td><b>Usu&aacute;rio</b></td></tr>
-							<tr><td><input type="text" name="login" id="login"></td></tr>
+							<tr><td><input type="text" name="usu_login" id="usu_login"></td></tr>
 							<tr><td><b>Senha</b></td></tr>
-							<tr><td><input type="password" name="senha" id="senha"></td></tr>
+							<tr><td><input type="password" name="usu_senha" id="usu_senha"></td></tr>
 							<tr><td colspan="2" ALIGN="RIGHT"><input type="submit" class="button_e" name="bt" value="ENTRAR"></td></tr>
 						</table>
 					</td>
